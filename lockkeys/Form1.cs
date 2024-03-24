@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace lockkeys
         private bool previousCapsLockState = false;
         private bool previousNumLockState = false;
         private bool previousScrollLockState = false;
+        private bool appuseslighttheme = false;
 
         public Form1()
         {
@@ -111,8 +113,10 @@ namespace lockkeys
         {
             // Code to show form for Caps Lock On
             lockkeycaps1.Show();
-            lockkeycaps1.label1.Text = "Caps Lock On";
+            lockkeycaps1.label1.Text = "On";
+            lockkeycaps1.label3.Text = "";
             lockkeycaps1.Opacity = 100;
+            lockkeycaps1.currentOpacity = 1.0;
             lockkeycaps1.timer1.Start();
         }
 
@@ -120,8 +124,10 @@ namespace lockkeys
         {
             // Code to show form for Caps Lock Off
             lockkeycaps1.Show();
-            lockkeycaps1.label1.Text = "Caps Lock Off";
+            lockkeycaps1.label1.Text = "Off";
+            lockkeycaps1.label3.Text = "";
             lockkeycaps1.Opacity = 100;
+            lockkeycaps1.currentOpacity = 1.0;
             lockkeycaps1.timer1.Start();
         }
 
@@ -129,8 +135,10 @@ namespace lockkeys
         {
             // Code to show form for Num Lock On
             lockkeynum1.Show();
-            lockkeynum1.label1.Text = "Num Lock On";
+            lockkeynum1.label1.Text = "On";
+            lockkeynum1.label3.Text = "";
             lockkeynum1.Opacity = 100;
+            lockkeynum1.currentOpacity = 1.0;
             lockkeynum1.timer1.Start();
         }
 
@@ -138,8 +146,10 @@ namespace lockkeys
         {
             // Code to show form for Num Lock Off
             lockkeynum1.Show();
-            lockkeynum1.label1.Text = "Num Lock Off";
+            lockkeynum1.label1.Text = "Off";
+            lockkeynum1.label3.Text = "";
             lockkeynum1.Opacity = 100;
+            lockkeynum1.currentOpacity = 1.0;
             lockkeynum1.timer1.Start();
         }
 
@@ -147,8 +157,10 @@ namespace lockkeys
         {
             // Code to show form for Scroll Lock On
             lockkeyscroll1.Show();
-            lockkeyscroll1.label1.Text = "Scroll Lock On";
+            lockkeyscroll1.label1.Text = "On";
+            lockkeyscroll1.label3.Text = "";
             lockkeyscroll1.Opacity = 100;
+            lockkeyscroll1.currentOpacity = 1.0;
             lockkeyscroll1.timer1.Start();
         }
 
@@ -156,8 +168,10 @@ namespace lockkeys
         {
             // Code to show form for Scroll Lock Off
             lockkeyscroll1.Show();
-            lockkeyscroll1.label1.Text = "Scroll Lock Off";
+            lockkeyscroll1.label1.Text = "Off";
+            lockkeyscroll1.label3.Text = "";
             lockkeyscroll1.Opacity = 100;
+            lockkeyscroll1.currentOpacity = 1.0;
             lockkeyscroll1.timer1.Start();
         }
 
@@ -165,6 +179,24 @@ namespace lockkeys
         {
             // Periodically update the state of locking keys
             UpdateLockStates();
+            if (appuseslighttheme)
+            {
+                lockkeyscroll1.BackColor = SystemColors.Control;
+                lockkeynum1.BackColor = SystemColors.Control;
+                lockkeycaps1.BackColor = SystemColors.Control;
+                lockkeyscroll1.ForeColor = Color.Black;
+                lockkeynum1.ForeColor = Color.Black;
+                lockkeycaps1.ForeColor = Color.Black;
+            }
+            else 
+            {
+                lockkeyscroll1.BackColor = Color.FromArgb(20,20,20);
+                lockkeynum1.BackColor = Color.FromArgb(20, 20, 20);
+                lockkeycaps1.BackColor = Color.FromArgb(20, 20, 20);
+                lockkeyscroll1.ForeColor = Color.White;
+                lockkeynum1.ForeColor = Color.White;
+                lockkeycaps1.ForeColor = Color.White;
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -189,6 +221,32 @@ namespace lockkeys
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void TextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only numeric characters, backspace, and delete
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Suppress the key press event
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int value = int.Parse(textBox1.Text);
+            lockkeycaps1.timer1.Interval = value;
+            lockkeynum1.timer1.Interval = value;
+            lockkeyscroll1.timer1.Interval = value;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            appuseslighttheme = false;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            appuseslighttheme = true;
         }
     }
 }

@@ -54,6 +54,9 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.button3 = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -62,12 +65,13 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCapsLock
             // 
             this.lblCapsLock.AutoSize = true;
-            this.lblCapsLock.Location = new System.Drawing.Point(6, 19);
+            this.lblCapsLock.Location = new System.Drawing.Point(9, 23);
             this.lblCapsLock.Name = "lblCapsLock";
             this.lblCapsLock.Size = new System.Drawing.Size(65, 13);
             this.lblCapsLock.TabIndex = 0;
@@ -76,7 +80,7 @@
             // lblNumLock
             // 
             this.lblNumLock.AutoSize = true;
-            this.lblNumLock.Location = new System.Drawing.Point(6, 42);
+            this.lblNumLock.Location = new System.Drawing.Point(10, 46);
             this.lblNumLock.Name = "lblNumLock";
             this.lblNumLock.Size = new System.Drawing.Size(63, 13);
             this.lblNumLock.TabIndex = 1;
@@ -85,7 +89,7 @@
             // lblScrollLock
             // 
             this.lblScrollLock.AutoSize = true;
-            this.lblScrollLock.Location = new System.Drawing.Point(6, 65);
+            this.lblScrollLock.Location = new System.Drawing.Point(8, 69);
             this.lblScrollLock.Name = "lblScrollLock";
             this.lblScrollLock.Size = new System.Drawing.Size(67, 13);
             this.lblScrollLock.TabIndex = 2;
@@ -152,6 +156,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox6);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -266,6 +271,7 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "5000";
             this.Info.SetToolTip(this.textBox1, "Sets the time untill the idicator dismisses (in ms)");
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1_KeyPress);
             // 
             // button2
             // 
@@ -275,6 +281,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "Set";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Info
             // 
@@ -301,7 +308,7 @@
             this.groupBox5.Controls.Add(this.lblNumLock);
             this.groupBox5.Location = new System.Drawing.Point(212, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(97, 210);
+            this.groupBox5.Size = new System.Drawing.Size(97, 104);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Current Status";
@@ -327,6 +334,41 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.radioButton2);
+            this.groupBox6.Controls.Add(this.radioButton1);
+            this.groupBox6.Location = new System.Drawing.Point(212, 114);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(97, 102);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Apperance";
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(48, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Dark";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 42);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(48, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Light";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,8 +383,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "| LockKeys | Settings";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -357,6 +401,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -387,6 +433,9 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 

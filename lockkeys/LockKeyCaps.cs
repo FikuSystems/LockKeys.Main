@@ -12,8 +12,8 @@ namespace LockKeys
 {
     public partial class LockKeyCaps : Form
     {
-        private int fadeStep = 10;
-        private double currentOpacity = 1.0;
+        private int fadeStep = 5;
+        public double currentOpacity = 1.0;
         public LockKeyCaps()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace LockKeys
         {
             Rectangle workingArea = Screen.PrimaryScreen.WorkingArea;
             int xPos = workingArea.Left + (workingArea.Width - this.Width) / 2;
-            int yPos = workingArea.Top;
+            int yPos = workingArea.Top + 60;
             this.Location = new Point(xPos, yPos);
         }
 
