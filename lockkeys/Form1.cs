@@ -1,4 +1,5 @@
 ﻿using LockKeys;
+using LockKeys.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using System.Windows.Forms.PropertyGridInternal;
 
 namespace lockkeys
 {
@@ -24,6 +27,8 @@ namespace lockkeys
         private bool previousScrollLockState = false;
         private bool appuseslighttheme = false;
 
+        private int value;
+
         public Form1()
         {
             InitializeComponent();
@@ -31,8 +36,24 @@ namespace lockkeys
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Check and display the initial state of locking keys
+            appuseslighttheme = Settings.Default.AppUsesLightTheme;
+            if (appuseslighttheme)
+            {
+                radioButton2.Checked = true;
+            }
+            else
+            {
+                radioButton1.Checked = true;
+            }
 
+            checkBox1.Checked = Settings.Default.ShowCapsLock;
+            checkBox2.Checked = Settings.Default.ShowScrollLock;
+            checkBox3.Checked = Settings.Default.ShowNumLock;
+            value = Settings.Default.DissmissTime;
+            textBox1.Text = value.ToString();
+            lockkeycaps1.timer1.Interval = value;
+            lockkeynum1.timer1.Interval = value;
+            lockkeyscroll1.timer1.Interval = value;
 
             UpdateLockStates();
             gradients();
@@ -111,68 +132,86 @@ namespace lockkeys
 
         private void ShowCapsLockForm()
         {
-            // Code to show form for Caps Lock On
-            lockkeycaps1.Show();
-            lockkeycaps1.label1.Text = "On";
-            lockkeycaps1.label3.Text = "";
-            lockkeycaps1.Opacity = 100;
-            lockkeycaps1.currentOpacity = 1.0;
-            lockkeycaps1.timer1.Start();
+            if (checkBox1.Checked)
+            {
+                // Code to show form for Caps Lock On
+                lockkeycaps1.Show();
+                lockkeycaps1.label1.Text = "On";
+                lockkeycaps1.label3.Text = "";
+                lockkeycaps1.Opacity = 100;
+                lockkeycaps1.currentOpacity = 1.0;
+                lockkeycaps1.timer1.Start();
+            }
         }
 
         private void ShowCapsLockOffForm()
         {
-            // Code to show form for Caps Lock Off
-            lockkeycaps1.Show();
-            lockkeycaps1.label1.Text = "Off";
-            lockkeycaps1.label3.Text = "";
-            lockkeycaps1.Opacity = 100;
-            lockkeycaps1.currentOpacity = 1.0;
-            lockkeycaps1.timer1.Start();
+            if (checkBox1.Checked)
+            {
+                // Code to show form for Caps Lock Off
+                lockkeycaps1.Show();
+                lockkeycaps1.label1.Text = "Off";
+                lockkeycaps1.label3.Text = "";
+                lockkeycaps1.Opacity = 100;
+                lockkeycaps1.currentOpacity = 1.0;
+                lockkeycaps1.timer1.Start();
+            }
         }
 
         private void ShowNumLockForm()
         {
-            // Code to show form for Num Lock On
-            lockkeynum1.Show();
-            lockkeynum1.label1.Text = "On";
-            lockkeynum1.label3.Text = "";
-            lockkeynum1.Opacity = 100;
-            lockkeynum1.currentOpacity = 1.0;
-            lockkeynum1.timer1.Start();
+            if (checkBox2.Checked)
+            {
+                // Code to show form for Num Lock On
+                lockkeynum1.Show();
+                lockkeynum1.label1.Text = "On";
+                lockkeynum1.label3.Text = "";
+                lockkeynum1.Opacity = 100;
+                lockkeynum1.currentOpacity = 1.0;
+                lockkeynum1.timer1.Start();
+            }
         }
 
         private void ShowNumLockOffForm()
         {
-            // Code to show form for Num Lock Off
-            lockkeynum1.Show();
-            lockkeynum1.label1.Text = "Off";
-            lockkeynum1.label3.Text = "";
-            lockkeynum1.Opacity = 100;
-            lockkeynum1.currentOpacity = 1.0;
-            lockkeynum1.timer1.Start();
+            if (checkBox2.Checked)
+            {
+                // Code to show form for Num Lock Off
+                lockkeynum1.Show();
+                lockkeynum1.label1.Text = "Off";
+                lockkeynum1.label3.Text = "";
+                lockkeynum1.Opacity = 100;
+                lockkeynum1.currentOpacity = 1.0;
+                lockkeynum1.timer1.Start();
+            }
         }
 
         private void ShowScrollLockForm()
         {
-            // Code to show form for Scroll Lock On
-            lockkeyscroll1.Show();
-            lockkeyscroll1.label1.Text = "On";
-            lockkeyscroll1.label3.Text = "";
-            lockkeyscroll1.Opacity = 100;
-            lockkeyscroll1.currentOpacity = 1.0;
-            lockkeyscroll1.timer1.Start();
+            if (checkBox3.Checked)
+            {
+                // Code to show form for Scroll Lock On
+                lockkeyscroll1.Show();
+                lockkeyscroll1.label1.Text = "On";
+                lockkeyscroll1.label3.Text = "";
+                lockkeyscroll1.Opacity = 100;
+                lockkeyscroll1.currentOpacity = 1.0;
+                lockkeyscroll1.timer1.Start();
+            }
         }
 
         private void ShowScrollLockOffForm()
         {
-            // Code to show form for Scroll Lock Off
-            lockkeyscroll1.Show();
-            lockkeyscroll1.label1.Text = "Off";
-            lockkeyscroll1.label3.Text = "";
-            lockkeyscroll1.Opacity = 100;
-            lockkeyscroll1.currentOpacity = 1.0;
-            lockkeyscroll1.timer1.Start();
+            if (checkBox3.Checked)
+            {
+                // Code to show form for Scroll Lock Off
+                lockkeyscroll1.Show();
+                lockkeyscroll1.label1.Text = "Off";
+                lockkeyscroll1.label3.Text = "";
+                lockkeyscroll1.Opacity = 100;
+                lockkeyscroll1.currentOpacity = 1.0;
+                lockkeyscroll1.timer1.Start();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -233,20 +272,50 @@ namespace lockkeys
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            int value = int.Parse(textBox1.Text);
+            value = int.Parse(textBox1.Text);
             lockkeycaps1.timer1.Interval = value;
             lockkeynum1.timer1.Interval = value;
             lockkeyscroll1.timer1.Interval = value;
+
+            Settings.Default.DissmissTime = value;
+            Settings.Default.Save();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             appuseslighttheme = false;
+            Settings.Default.AppUsesLightTheme = appuseslighttheme;
+            Settings.Default.Save();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             appuseslighttheme = true;
+            Settings.Default.AppUsesLightTheme = appuseslighttheme;
+            Settings.Default.Save();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.ShowCapsLock = checkBox1.Checked;
+            Settings.Default.Save();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.ShowScrollLock = checkBox2.Checked;
+            Settings.Default.Save();
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.Default.ShowNumLock = checkBox3.Checked;
+            Settings.Default.Save();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

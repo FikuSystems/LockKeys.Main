@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="lockkey.ico" />
+    <None Include="Resources\lockkeybing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,5 +22,65 @@ namespace LockKeys.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AppUsesLightTheme {
+            get {
+                return ((bool)(this["AppUsesLightTheme"]));
+            }
+            set {
+                this["AppUsesLightTheme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowCapsLock {
+            get {
+                return ((bool)(this["ShowCapsLock"]));
+            }
+            set {
+                this["ShowCapsLock"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowScrollLock {
+            get {
+                return ((bool)(this["ShowScrollLock"]));
+            }
+            set {
+                this["ShowScrollLock"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowNumLock {
+            get {
+                return ((bool)(this["ShowNumLock"]));
+            }
+            set {
+                this["ShowNumLock"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3000")]
+        public int DissmissTime {
+            get {
+                return ((int)(this["DissmissTime"]));
+            }
+            set {
+                this["DissmissTime"] = value;
+            }
+        }
     }
 }
