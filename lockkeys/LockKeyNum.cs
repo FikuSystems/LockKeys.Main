@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace LockKeys
 {
-    public partial class LockKeyCaps : Form
+    public partial class LockKeyNum : Form
     {
         private int fadeStep = 10;
         private double currentOpacity = 1.0;
-        public LockKeyCaps()
+        public LockKeyNum()
         {
             InitializeComponent();
         }

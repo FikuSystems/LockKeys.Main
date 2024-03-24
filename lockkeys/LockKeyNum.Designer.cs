@@ -1,6 +1,6 @@
 ﻿namespace LockKeys
 {
-    partial class LockKeyCaps
+    partial class LockKeyNum
     {
         /// <summary>
         /// Required designer variable.
@@ -42,18 +42,18 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(134, 18);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Caps Lock On";
+            this.label1.Text = "Num Lock On";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 40);
+            this.label2.Location = new System.Drawing.Point(6, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 55);
+            this.label2.Size = new System.Drawing.Size(126, 55);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Aa";
+            this.label2.Text = "Num";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
@@ -68,7 +68,7 @@
             this.fadeTimer.Interval = 50;
             this.fadeTimer.Tick += new System.EventHandler(this.FadeTimer_Tick);
             // 
-            // LockKeyCaps
+            // LockKeyNum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,7 +80,7 @@
             this.MaximumSize = new System.Drawing.Size(150, 150);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(150, 150);
-            this.Name = "LockKeyCaps";
+            this.Name = "LockKeyNum";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.TopMost = true;

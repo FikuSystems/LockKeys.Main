@@ -61,6 +61,18 @@
     <Compile Include="LockKeyCaps.Designer.cs">
       <DependentUpon>LockKeyCaps.cs</DependentUpon>
     </Compile>
+    <Compile Include="LockKeyNum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LockKeyNum.Designer.cs">
+      <DependentUpon>LockKeyNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LockKeyScroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LockKeyScroll.Designer.cs">
+      <DependentUpon>LockKeyScroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -68,6 +80,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LockKeyCaps.resx">
       <DependentUpon>LockKeyCaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LockKeyNum.resx">
+      <DependentUpon>LockKeyNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LockKeyScroll.resx">
+      <DependentUpon>LockKeyScroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

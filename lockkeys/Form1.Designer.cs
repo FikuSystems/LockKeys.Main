@@ -169,7 +169,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 28);
             this.button1.TabIndex = 5;
-            this.button1.Text = "Save and close";
+            this.button1.Text = "Save and hide";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -250,6 +250,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
+            this.checkBox4.Enabled = false;
             this.checkBox4.Location = new System.Drawing.Point(6, 19);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(89, 17);
