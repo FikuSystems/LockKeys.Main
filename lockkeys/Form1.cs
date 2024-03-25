@@ -317,5 +317,11 @@ namespace lockkeys
         {
 
         }
+
+        private void Form1_HelpButtonClicked(object sender, CancelEventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
     }
 }
