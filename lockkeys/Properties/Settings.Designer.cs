@@ -82,5 +82,17 @@ namespace LockKeys.Properties {
                 this["DissmissTime"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool StartAtLogon {
+            get {
+                return ((bool)(this["StartAtLogon"]));
+            }
+            set {
+                this["StartAtLogon"] = value;
+            }
+        }
     }
 }

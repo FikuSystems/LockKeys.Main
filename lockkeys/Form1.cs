@@ -1,5 +1,6 @@
 ﻿using LockKeys;
 using LockKeys.Properties;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,8 +22,9 @@ namespace lockkeys
         LockKeyCaps lockkeycaps1 = new LockKeyCaps();
         LockKeyNum lockkeynum1 = new LockKeyNum();
         LockKeyScroll lockkeyscroll1 = new LockKeyScroll();
+		RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-        private bool previousCapsLockState = false;
+		private bool previousCapsLockState = false;
         private bool previousNumLockState = false;
         private bool previousScrollLockState = false;
         private bool appuseslighttheme = false;
@@ -36,6 +38,7 @@ namespace lockkeys
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            checkBox4.Checked = Settings.Default.StartAtLogon;
             appuseslighttheme = Settings.Default.AppUsesLightTheme;
             if (appuseslighttheme)
             {
@@ -323,5 +326,17 @@ namespace lockkeys
             About about = new About();
             about.Show();
         }
-    }
+
+		private void checkBox4_CheckedChanged(object sender, EventArgs e)
+		{
+            Settings.Default.StartAtLogon = checkBox4.Checked;
+            if (Settings.Default.StartAtLogon)
+            {
+                rkApp.SetValue("LockKeys.exe", Application.ExecutablePath);
+            } else
+            {
+                rkApp.SetValue("LockKeys.exe", false);
+            }
+		}
+	}
 }
