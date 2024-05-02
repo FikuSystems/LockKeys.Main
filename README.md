@@ -12,7 +12,7 @@ As long as your system has the Segoe UI type face installed, and supports .NET 4
 | Windows 11      | ✅ Supported        |                                           |
 | Windows 10      | ✅ Supported        |                                           |
 | Windows 8.1     | ✅ Supported        |                                           |
-| Windows 8       | ⚠ Unknown           | I don't know if .NET 4.7.2 is supported.  |
+| Windows 8       | ✅ Supported        | I don't know if .NET 4.7.2 is supported.  |
 | Windows 7       | ⚠ Incompatibilities | Segoe UI typeface not natively installed. |
 
 LockKeys also doesn't require any prerequisites, so you can just put the EXE in your startup folder so it opens on login (until Start on logon is implemented).
