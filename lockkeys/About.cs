@@ -38,6 +38,7 @@ namespace LockKeys
         private void About_Load(object sender, EventArgs e)
         {
             gradients();
+            CurVer.Text = Application.ProductVersion.ToString();
         }
         private void gradients()
         {
