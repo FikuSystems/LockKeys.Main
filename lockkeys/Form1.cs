@@ -145,6 +145,9 @@ namespace lockkeys
                 lockkeycaps1.Opacity = 100;
                 lockkeycaps1.currentOpacity = 1.0;
                 lockkeycaps1.timer1.Start();
+                lockkeycaps1.timer1.Stop();
+                lockkeycaps1.timer1.Start();
+                lockkeycaps1.fadeTimer.Stop();
             }
         }
 
@@ -159,6 +162,9 @@ namespace lockkeys
                 lockkeycaps1.Opacity = 100;
                 lockkeycaps1.currentOpacity = 1.0;
                 lockkeycaps1.timer1.Start();
+                lockkeycaps1.timer1.Stop();
+                lockkeycaps1.timer1.Start();
+                lockkeycaps1.fadeTimer.Stop();
             }
         }
 
@@ -173,6 +179,9 @@ namespace lockkeys
                 lockkeynum1.Opacity = 100;
                 lockkeynum1.currentOpacity = 1.0;
                 lockkeynum1.timer1.Start();
+                lockkeynum1.timer1.Stop();
+                lockkeynum1.timer1.Start();
+                lockkeynum1.fadeTimer.Stop();
             }
         }
 
@@ -187,6 +196,9 @@ namespace lockkeys
                 lockkeynum1.Opacity = 100;
                 lockkeynum1.currentOpacity = 1.0;
                 lockkeynum1.timer1.Start();
+                lockkeynum1.timer1.Stop();
+                lockkeynum1.timer1.Start();
+                lockkeynum1.fadeTimer.Stop();
             }
         }
 
@@ -201,6 +213,9 @@ namespace lockkeys
                 lockkeyscroll1.Opacity = 100;
                 lockkeyscroll1.currentOpacity = 1.0;
                 lockkeyscroll1.timer1.Start();
+                lockkeyscroll1.timer1.Stop();
+                lockkeyscroll1.timer1.Start();
+                lockkeyscroll1.fadeTimer.Stop();
             }
         }
 
@@ -215,6 +230,9 @@ namespace lockkeys
                 lockkeyscroll1.Opacity = 100;
                 lockkeyscroll1.currentOpacity = 1.0;
                 lockkeyscroll1.timer1.Start();
+                lockkeyscroll1.timer1.Stop();
+                lockkeyscroll1.timer1.Start();
+                lockkeyscroll1.fadeTimer.Stop();
             }
         }
 
@@ -251,6 +269,7 @@ namespace lockkeys
         {
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
+            this.Hide();
 
             notifyIcon1.ShowBalloonTip(2000, "LockKeys is hidden to tray", "Double click the icon to open LockKeys settings.", ToolTipIcon.Info);
         }
@@ -259,6 +278,7 @@ namespace lockkeys
         {
             this.WindowState = FormWindowState.Normal;
             this.ShowInTaskbar = true;
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -339,6 +359,23 @@ namespace lockkeys
             {
                 rkApp.SetValue("LockKeys.exe", false);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.ShowInTaskbar = true;
+            this.Show();
         }
     }
 }
