@@ -34,16 +34,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.TextList = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.CurVer = new System.Windows.Forms.Label();
+            this.TextList = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -112,49 +112,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Software information";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Location = new System.Drawing.Point(6, 144);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(359, 16);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "ReadMe File (GitHub)";
-            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LockKeys.Properties.Resources.lockkeybing;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(359, 119);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(396, 71);
-            this.panel1.TabIndex = 0;
-            // 
-            // TextList
-            // 
-            this.TextList.AutoSize = true;
-            this.TextList.Location = new System.Drawing.Point(6, 19);
-            this.TextList.Name = "TextList";
-            this.TextList.Size = new System.Drawing.Size(91, 165);
-            this.TextList.TabIndex = 1;
-            this.TextList.Text = "Current Version:\r\n\r\nPublisher:\r\nProduct:\r\nCopyright:\r\nDescription:\r\n\r\n\r\n\r\n\r\nContr" +
-    "ibuters:";
-            this.TextList.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -170,8 +127,8 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(250, 48);
             this.label6.TabIndex = 13;
-            this.label6.Text = "IP Info is a program that pulls the information about an IP address inputed and g" +
-    "ives the user copying capabitlites.";
+            this.label6.Text = "Lockkeys is a program that displaus the status of the locking keys on your displa" +
+    "y.";
             // 
             // label5
             // 
@@ -208,6 +165,49 @@
             this.CurVer.Size = new System.Drawing.Size(40, 15);
             this.CurVer.TabIndex = 9;
             this.CurVer.Text = "x.x.x.x";
+            // 
+            // TextList
+            // 
+            this.TextList.AutoSize = true;
+            this.TextList.Location = new System.Drawing.Point(6, 19);
+            this.TextList.Name = "TextList";
+            this.TextList.Size = new System.Drawing.Size(91, 165);
+            this.TextList.TabIndex = 1;
+            this.TextList.Text = "Current Version:\r\n\r\nPublisher:\r\nProduct:\r\nCopyright:\r\nDescription:\r\n\r\n\r\n\r\n\r\nContr" +
+    "ibuters:";
+            this.TextList.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Location = new System.Drawing.Point(6, 144);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(359, 16);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "ReadMe File (GitHub)";
+            this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LockKeys.Properties.Resources.lockkeybing;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(359, 119);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(102)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(396, 71);
+            this.panel1.TabIndex = 0;
             // 
             // About
             // 
