@@ -20,3 +20,5 @@ LockKeys also doesn't require any prerequisites, so you can just put the EXE in 
 LockKeys is self explanatory with it's simple by design UI, although basic looking.
 
 The program is designed to be left running in the background in your system tray. The program opens in the tray with the settings window hidden, doubble click the icon to show the settings. Any changed settings are automaticaly saved.
+# Updates and responce to issues
+This may be slow because this isnt our main project and focus.
