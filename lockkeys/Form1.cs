@@ -39,6 +39,11 @@ namespace lockkeys
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if(Settings.Default.FirstTimeStart == false)
+            {
+                firstTimeStart firsttime = new firstTimeStart();
+                firsttime.Show();
+            }
             checkBox4.Checked = Settings.Default.StartAtLogon;
             appuseslighttheme = Settings.Default.AppUsesLightTheme;
             if (appuseslighttheme)

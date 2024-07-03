@@ -94,5 +94,17 @@ namespace LockKeys.Properties {
                 this["StartAtLogon"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool FirstTimeStart {
+            get {
+                return ((bool)(this["FirstTimeStart"]));
+            }
+            set {
+                this["FirstTimeStart"] = value;
+            }
+        }
     }
 }
