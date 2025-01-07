@@ -1,6 +1,6 @@
-﻿namespace lockkeysnetcore
+﻿namespace LockKeysCore
 {
-    partial class Popup
+    partial class LockKeyCaps
     {
         /// <summary>
         /// Required designer variable.
@@ -39,18 +39,21 @@
             // label1
             // 
             label1.Dock = DockStyle.Bottom;
-            label1.Location = new Point(0, 110);
+            label1.Location = new Point(0, 127);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(160, 30);
+            label1.Size = new Size(187, 35);
             label1.TabIndex = 0;
             label1.Text = "Caps Lock On";
             label1.TextAlign = ContentAlignment.TopCenter;
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 21.75F);
-            label2.Location = new Point(8, 70);
+            label2.Location = new Point(9, 81);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(145, 40);
             label2.TabIndex = 1;
@@ -61,43 +64,45 @@
             // 
             timer1.Enabled = true;
             timer1.Interval = 3000;
+            timer1.Tick += timer1_Tick;
             // 
             // fadeTimer
             // 
             fadeTimer.Enabled = true;
             fadeTimer.Interval = 1;
+            fadeTimer.Tick += FadeTimer_Tick;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe MDL2 Assets", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(48, 16);
+            label3.Location = new Point(56, 18);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(68, 48);
             label3.TabIndex = 2;
             label3.Text = "";
             // 
-            // Popup
+            // LockKeyCaps
             // 
-            AutoScaleDimensions = new SizeF(96F, 96F);
-            AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(160, 140);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(187, 162);
             ControlBox = false;
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Font = new Font("Microsoft Sans Serif", 8.25F);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
-            MaximumSize = new Size(160, 140);
+            MaximumSize = new Size(187, 162);
             MinimizeBox = false;
-            MinimumSize = new Size(160, 140);
-            Name = "Popup";
+            MinimumSize = new Size(187, 162);
+            Name = "LockKeyCaps";
             ShowIcon = false;
             ShowInTaskbar = false;
-            StartPosition = FormStartPosition.Manual;
             TopMost = true;
-            Load += Popup_Load;
+            Load += LockKeyCaps_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -32,18 +32,20 @@
             panel1 = new Panel();
             label3 = new Label();
             label4 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 90, 0);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label4);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(971, 68);
+            panel1.Size = new Size(671, 68);
             panel1.TabIndex = 1;
             // 
             // label3
@@ -54,7 +56,7 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(64, 41);
             label3.Name = "label3";
-            label3.Size = new Size(847, 17);
+            label3.Size = new Size(547, 17);
             label3.TabIndex = 3;
             label3.Text = "Control LockKeys Settings";
             label3.TextAlign = ContentAlignment.TopCenter;
@@ -67,22 +69,31 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(64, 11);
             label4.Name = "label4";
-            label4.Size = new Size(850, 30);
+            label4.Size = new Size(550, 30);
             label4.TabIndex = 2;
             label4.Text = "LockKeys Settings";
             label4.TextAlign = ContentAlignment.TopCenter;
             // 
-            // Settings
+            // button1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(971, 412);
+            button1.Location = new Point(575, 23);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 2;
+            button1.Text = "About";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // Options
+            // 
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(671, 443);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Settings";
+            Name = "Options";
             Text = "LockKeys Settings";
             Load += Settings_Load;
             panel1.ResumeLayout(false);
@@ -94,5 +105,6 @@
         private Panel panel1;
         private Label label3;
         private Label label4;
+        private Button button1;
     }
 }

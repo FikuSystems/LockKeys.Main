@@ -9,9 +9,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("lockkeys")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Compas75 Limited")]
+[assembly: AssemblyCompany("FikuSystems")]
 [assembly: AssemblyProduct("lockkeys")]
-[assembly: AssemblyCopyright("Copyright © Compas75 Limited 2024")]
+[assembly: AssemblyCopyright("Copyright © FikuSystems 2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -148,8 +148,8 @@
             // 
             // Welcome
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(701, 426);
             ControlBox = false;
             Controls.Add(pictureBox3);
@@ -163,7 +163,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Welcome";
             Text = "Welcome to LockKeys!";
-            Load += this.Welcome_Load;
+            Load += Welcome_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
